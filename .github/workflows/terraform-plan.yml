@@ -1,0 +1,28 @@
+name: Runs terraform plan
+on:
+  pull_request:
+  push:
+    branches:
+      - "dev"
+      - "main"
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        name: checkout
+
+      - name: set kube-config
+        uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+          context: roy-cli # current-context from kubeconfig is used as default
+
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
+        with:
+          path: terraform

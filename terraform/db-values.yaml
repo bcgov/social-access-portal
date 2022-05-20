@@ -1,0 +1,31 @@
+auth:
+  database: sdpr
+  password: freshworks
+  username: freshworks
+  postgresPassword: admin
+  enablePostgresUser: true
+
+storageClass: netapp-block-standard
+
+primary:
+  podSecurityContext:
+    fsGroup: 1003230000
+  containerSecurityContext:
+    runAsUser: 1003239999
+  persistence:
+    size: "1Gi"
+  resources:
+    requests:
+      cpu: "20m"
+      memory: "32Mi"
+
+volumePermissions:
+  containerSecurityContext:
+    runAsUser: 1003239999
+
+
+readReplicas:
+  podSecurityContext:
+    fsGroup: 1003230000
+  containerSecurityContext:
+    runAsUser: 1003239999 
