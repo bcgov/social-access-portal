@@ -1,13 +1,13 @@
-name: Runs terraform plan
+name: Apply terraform plan
+
 on:
-  pull_request:
   push:
     branches:
-      - "dev"
-      - "main"
+      - main
+      - dev
 
 jobs:
-  terraform-plan:
+  terraform-apply:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
           context: ${{ secrets.KUBE_CONTEXT }}
 
-      - name: terraform plan
-        uses: dflook/terraform-plan@v1
+      - name: terraform apply
+        uses: dflook/terraform-apply@v1
         with:
-          path: terraform
+          path: my-terraform-config
