@@ -1,11 +1,11 @@
 resource "kubernetes_network_policy" "sdpr_network_policy" {
   metadata {
     name      = "sdpr-network-policy"
-    namespace = "b0f542-dev"
+    namespace = var.KUBE_NAMESPACE
   }
 
   spec {
-    pod_selector { }
+    pod_selector {}
 
     ingress {
       from {
@@ -25,19 +25,19 @@ resource "kubernetes_network_policy" "sdpr_network_policy" {
 
 resource "kubernetes_network_policy" "sdpr_network_policy_internal" {
   metadata {
-    name = "sdpr-network-policy-internal"
-    namespace = "b0f542-dev"
+    name      = "sdpr-network-policy-internal"
+    namespace = var.KUBE_NAMESPACE
   }
 
   spec {
-    pod_selector { }
+    pod_selector {}
 
     ingress {
       from {
-        pod_selector { }
+        pod_selector {}
       }
     }
-   policy_types = ["Ingress"]
+    policy_types = ["Ingress"]
 
   }
 }

@@ -8,14 +8,14 @@ command:
   - "--hostname-strict-https=false"
 extraEnv: |
   - name: KEYCLOAK_ADMIN
-    value: admin
+    value: ${KEYCLOAK_ADMIN_USERNAME}
   - name: KEYCLOAK_ADMIN_PASSWORD
-    value: admin
+    value: ${KEYCLOAK_ADMIN_PASSWORD}
   - name: JAVA_OPTS_APPEND
     value: >-
       -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
   - name: DB_PORT
-    value: "5432"
+    value: "${DB_PORT}"
 
 # Optionally override the fully qualified name
 fullnameOverride: ""
@@ -287,7 +287,7 @@ ingress:
   rules:
     -
       # Ingress host
-      host: 'bcsc.apps.silver.devops.gov.bc.ca'
+      host: '${SUB_DOMAIN}.${HOST_DOMAIN}'
       # Paths for the host
       paths:
         - path: '{{ trimSuffix "/" .Values.http.relativePath}}/'
@@ -295,7 +295,7 @@ ingress:
   # TLS configuration
   tls:
     - hosts:
-        - apps.silver.devops.gov.bc.ca
+        - ${HOST_DOMAIN}
       secretName: ""
 
   # ingress for console only (/auth/admin)
@@ -310,7 +310,7 @@ ingress:
     rules:
       -
         # Ingress host
-        host: 'bcsc.apps.silver.devops.gov.bc.ca'
+        host: '${SUB_DOMAIN}.${HOST_DOMAIN}'
         # Paths for the host
         paths:
           - path: '{{ trimSuffix "/" .Values.http.relativePath}}/admin'
@@ -344,7 +344,7 @@ route:
   # Additional Route labels
   labels: {}
   # Host name for the Route
-  host: "bcsc.apps.silver.devops.gov.bc.ca"
+  host: "${SUB_DOMAIN}.${HOST_DOMAIN}"
   # TLS configuration
   tls:
     # If `true`, TLS is enabled for the Route
@@ -382,10 +382,10 @@ database:
   # E.g. dev-file, dev-mem, mariadb, mssql, mysql, oracle or postgres
   vendor: postgres
   hostname: postgresql
-  port: 5432
-  database: sdpr
-  username: freshworks
-  password: freshworks
+  port: ${DB_PORT}
+  database: ${DB_DATABASE}
+  username: ${DB_USER_USERNAME}
+  password: ${DB_USER_PASSWORD}
 
 cache:
   # Use "custom" to disable automatic cache configuration
