@@ -30,7 +30,7 @@ image:
   # The Keycloak image repository
   repository: quay.io/keycloak/keycloak
   # Overrides the Keycloak image tag whose default is the chart appVersion
-  tag: "latest"
+  tag: "${IMAGE_TAG}"
   # The Keycloak image pull policy
   pullPolicy: IfNotPresent
 
@@ -476,7 +476,7 @@ autoscaling:
   # If `true`, a autoscaling/v2beta2 HorizontalPodAutoscaler resource is created (requires Kubernetes 1.18 or above)
   # Autoscaling seems to be most reliable when using KUBE_PING service discovery (see README for details)
   # This disables the `replicas` field in the StatefulSet
-  enabled: false
+  enabled: true
   # Additional HorizontalPodAutoscaler labels
   labels: {}
   # The minimum and maximum number of replicas for the Keycloak StatefulSet

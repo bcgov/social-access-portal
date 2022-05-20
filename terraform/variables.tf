@@ -1,16 +1,16 @@
 # Postgres variables
 variable "DB_USER_PASSWORD" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "DB_USER_USERNAME" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "DB_ROOT_PASSWORD" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
@@ -26,13 +26,18 @@ variable "DB_PORT" {
 
 # Keycloak variables
 variable "KEYCLOAK_ADMIN_USERNAME" {
-  type    = string
+  type      = string
   sensitive = true
 }
 
 variable "KEYCLOAK_ADMIN_PASSWORD" {
-  type    = string
+  type      = string
   sensitive = true
+}
+
+variable "IMAGE_TAG" {
+  type    = string
+  default = "18.0.0"
 }
 
 # Kubernetes variables
@@ -47,5 +52,5 @@ variable "HOST_DOMAIN" {
 }
 
 variable "SUB_DOMAIN" {
-  type    = string
+  type = string
 }

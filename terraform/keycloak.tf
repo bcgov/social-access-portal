@@ -14,7 +14,8 @@ resource "helm_release" "keycloak" {
         KEYCLOAK_ADMIN_USERNAME = var.KEYCLOAK_ADMIN_USERNAME,
         KEYCLOAK_ADMIN_PASSWORD = var.KEYCLOAK_ADMIN_PASSWORD,
         HOST_DOMAIN             = var.HOST_DOMAIN,
-        SUB_DOMAIN              = var.SUB_DOMAIN
+        SUB_DOMAIN              = var.SUB_DOMAIN,
+        IMAGE_TAG               = var.IMAGE_TAG
       }
     )
   ]

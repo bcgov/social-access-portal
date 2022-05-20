@@ -1,5 +1,5 @@
-provider "kubernetes" { }
+provider "kubernetes" {}
 
 provider "helm" {
-  kubernetes { }
+  kubernetes {}
 }
