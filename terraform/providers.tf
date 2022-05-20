@@ -1,11 +1,5 @@
-provider "kubernetes" {
-  config_context = "roy-cli"
-  config_path    = "./kubeconfig"
-}
+provider "kubernetes" { }
 
 provider "helm" {
-  kubernetes { 
-    config_context = "roy-cli"
-    config_path    = "./kubeconfig"
-  }
+  kubernetes { }
 }
