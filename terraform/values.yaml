@@ -48,7 +48,7 @@ hostAliases: []
 enableServiceLinks: true
 
 # Pod management policy. One of `Parallel` or `OrderedReady`
-podManagementPolicy: OrderedReady
+podManagementPolicy: Parallel
 
 # Pod restart policy. One of `Always`, `OnFailure`, or `Never`
 restartPolicy: Always
@@ -270,7 +270,7 @@ service:
 
 ingress:
   # If `true`, an Ingress is created
-  enabled: true
+  enabled: false
   # The name of the Ingress Class associated with this ingress
   ingressClassName: ""
   # The Service port targeted by the Ingress
@@ -355,7 +355,7 @@ route:
     termination: edge
 
 dbchecker:
-  enabled: false
+  enabled: true
   image:
     # Docker image used to check Database readiness at startup
     repository: docker.io/busybox
@@ -400,7 +400,7 @@ metrics:
 
 http:
   # For backwards compatibility reasons we set this to the value used by previous Keycloak versions.
-  relativePath: "/auth"
+  relativePath: ""
 
 serviceMonitor:
   # If `true`, a ServiceMonitor resource for the prometheus-operator is created
