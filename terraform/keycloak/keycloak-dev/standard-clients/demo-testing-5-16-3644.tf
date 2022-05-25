@@ -3,7 +3,7 @@ data "keycloak_authentication_flow" "demo_testing_5_16_3644_browserflow" {
   alias    = "idp stopper"
 }
 module "demo-testing-5-16-3644" {
-  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=8ce220a/modules/standard-client"
+  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=4a85665/modules/standard-client"
   realm_id    = var.standard_realm_id
   client_name = "demo-testing-5-16-3644"
   valid_redirect_uris = [
@@ -19,7 +19,8 @@ module "demo-testing-5-16-3644" {
     "bceidbasic",
     "bceidbusiness",
     "bceidboth",
-    "common"
+    "common",
+    "bcsc"
   ]
   description                  = "CSS App Created"
   override_authentication_flow = true

@@ -27,6 +27,11 @@ variable "azureidir_keycloak_url" {
   default = "https://login.microsoftonline.com/abcde/oauth2/v2.0"
 }
 
+variable "bcsc_keycloak_url" {
+  default = "https://keycloak.freshworks.club/auth/realms/social-sector-portal-test/protocol/openid-connect"
+}
+
+
 variable "siteminder_signing_certificate" {
   type      = string
   sensitive = true

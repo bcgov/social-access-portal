@@ -17,7 +17,7 @@ services:
       build:
         context: ./keycloak/
         dockerfile: Dockerfile
-      command: ["start-dev"]
+      command: ["start-dev --spi-theme-static-max-age=-1 --spi-theme-cache-themes=false --spi-theme-cache-templates=false"]
       volumes:
         - ./keycloak/extensions/themes/src/main/resources/theme/bcgov:/opt/keycloak/themes/bcgov
         - ./keycloak/extensions/themes/src/main/resources/theme/bcgov-idp-stopper:/opt/keycloak/themes/bcgov-idp-stopper
