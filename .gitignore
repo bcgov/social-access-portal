@@ -32,6 +32,8 @@ override.tf.json
 *.tfvars
 *.tfvars.json
 
+*.tfbackend
+*.tfbackend.json
 
 # Include override files you do wish to add to version control using negated pattern
 #
@@ -62,3 +64,4 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 .idea/
+
