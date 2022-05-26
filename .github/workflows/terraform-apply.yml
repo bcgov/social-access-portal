@@ -32,3 +32,6 @@ jobs:
         uses: dflook/terraform-apply@v1
         with:
           path: terraform
+          backend_config: |
+            repo = ${{secrets.ARTIFACTORY_REPO}}
+            subpath = ${{secrets.ARTIFACTORY_SUBPATH}}
