@@ -35,6 +35,7 @@ jobs:
         uses: dflook/terraform-apply@v1
         with:
           path: terraform
+          auto_approve: true
           backend_config: |
             username=${{secrets.ARTIFACTORY_USERNAME}}
             password=${{secrets.ARTIFACTORY_PASSWORD}}
