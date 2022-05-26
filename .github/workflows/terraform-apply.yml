@@ -33,5 +33,5 @@ jobs:
         with:
           path: terraform
           backend_config: |
-            repo = ${{secrets.ARTIFACTORY_REPO}}
-            subpath = ${{secrets.ARTIFACTORY_SUBPATH}}
+            repo=${{secrets.ARTIFACTORY_REPO}}
+            subpath=${{secrets.ARTIFACTORY_SUBPATH}}
