@@ -20,7 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
-
+      - name: Create Kube Config
+        run: |
+          echo "${{secrets.KUBE_CONFIG}}" > ./terraform/kubeconfig
       - name: set kube-config
         uses: azure/k8s-set-context@v2
         with:
@@ -33,5 +35,8 @@ jobs:
         with:
           path: terraform
           backend_config: |
-            repo = ${{secrets.ARTIFACTORY_REPO}}
-            subpath = ${{secrets.ARTIFACTORY_SUBPATH}}
+            username=${{secrets.ARTIFACTORY_USERNAME}}
+            password=${{secrets.ARTIFACTORY_PASSWORD}}
+            url=${{secrets.ARTIFACTORY_URL}}
+            repo=${{secrets.ARTIFACTORY_REPO}}
+            subpath=${{secrets.ARTIFACTORY_SUBPATH}}
