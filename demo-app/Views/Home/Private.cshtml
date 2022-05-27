@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Logged in Page";
+    var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
     var Username = ViewBag.Name;
 }
-<h1>Welcome to the logged in page.</h1>
+<h1>Welcome to @appTitle</h1>
 
 <p class="bottom-space">Logged in User: @Username</p>
 <p class="bottom-space">When does a dad become a dad joke? When it becomes <u>apparent</u> !</p>

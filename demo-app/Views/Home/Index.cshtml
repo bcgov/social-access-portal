@@ -1,9 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
 }
 
 <div>
-    <h1 class="bottom-space">Generic Application</h3>
+    <h1 class="bottom-space">Log Into @appTitle</h3>
     <p class="bottom-space">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam neque sit 
         amet leo vulputate, id finibus justo sollicitudin. 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis luctus laoreet. 

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,11 +19,8 @@
                 <img class ="logo" src="~/images/logo-banner.svg" alt="BC Gov logo"/>
             </div>
             <div class="title-wrapper" >
-                <div class="top-title" >
-                    BC Generic Application
-                </div>
                 <div class="bottom-title" >
-                    BC Generic Application Fullname
+                    @appTitle
                 </div>
             </div>  
         </div>
