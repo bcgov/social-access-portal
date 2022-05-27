@@ -30,3 +30,23 @@ services:
         - 8080:8080
       depends_on:
         - postgres
+
+  application:
+      image: bcscp-demo-app:dev
+      container_name: bcscp-demo-app
+      build:
+        context: ./demo-app
+        dockerfile: .docker/Dockerfile.dev
+      environment:
+        - KEYCLOAK_AUTHORITY=${KEYCLOAK_AUTHORITY}
+        - KEYCLOAK_CLIENT_ID=${KEYCLOAK_CLIENT_ID}
+        - KEYCLOAK_CLIENT_SECRET=${KEYCLOAK_CLIENT_SECRET}
+      restart: always
+      ports:
+        - 3000:7170
+      volumes:
+        - ./demo-app:/app
+        - /app/bin
+        - /app/obj
+    
+
