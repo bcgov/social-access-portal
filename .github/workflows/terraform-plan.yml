@@ -32,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Echo commit GITHUB_SHA::6
-        run: echo "${GITHUB_SHA::6}"
+        run: echo "${{ secrets.DOCKER_REPOSITORY }}/ssag:${GITHUB_SHA::6}"
 
       - name: Build Docker Image - Demo App
         uses: docker/build-push-action@v2
