@@ -40,7 +40,7 @@ jobs:
           file: demo-app/.docker/Dockerfile.prod
           context: ./demo-app
           push: true
-          tags: ${{ secrets.DOCKER_REPOSITORY }}/ssag:${GITHUB_SHA::6}
+          tags: "${{ secrets.DOCKER_REPOSITORY }}/ssag:${GITHUB_SHA::6}"
 
       - name: set kube-config
         uses: azure/k8s-set-context@v2
