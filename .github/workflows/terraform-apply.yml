@@ -20,7 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
-
+      - name: Create Kube Config
+        run: |
+          echo "${{secrets.KUBE_CONFIG}}" > ./terraform/kubeconfig
       - name: set kube-config
         uses: azure/k8s-set-context@v2
         with:

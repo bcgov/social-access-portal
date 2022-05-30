@@ -1,5 +1,12 @@
-provider "kubernetes" {}
+provider "kubernetes" {
+  config_path    = "./kubeconfig"
+  config_context = "pipeline"
+}
 
 provider "helm" {
-  kubernetes {}
+  kubernetes {
+      config_path    = "./kubeconfig"
+      config_context = "pipeline"
+
+  }
 }
