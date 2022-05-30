@@ -20,6 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
+      - uses: docker/login-action@v2
+        name: Login to Artifactory
+        with:
+          registry: ssag.jfrog.io
+          username: ${{ secrets.ARTIFACTORY_DOCKER_USERNAME }}
+          password: ${{ secrets.ARTIFACTORY_DOCKER_API_KEY }}
+
       - name: Create Kube Config
         run: |
           echo "${{secrets.KUBE_CONFIG}}" > ./terraform/kubeconfig

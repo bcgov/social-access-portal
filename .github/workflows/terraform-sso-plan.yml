@@ -1,0 +1,38 @@
+name: Runs KeyCloak terraform plan
+on:
+  pull_request:
+  push:
+    branches:
+      - "dev"
+      - "main"
+      - "BCSCP-4_Local-keycloak"
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        name: checkout
+      - name: Create Kube Config
+        run: |
+          echo "${{secrets.KUBE_CONFIG}}" > ./terraform/kubeconfig
+      - name: set kube-config
+        uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+          context: ${{ secrets.KUBE_CONTEXT }}
+
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
+        with:
+          path: terraform-sso
+          backend_config: |
+            username=${{secrets.ARTIFACTORY_USERNAME}}
+            password=${{secrets.ARTIFACTORY_PASSWORD}}
+            url=${{secrets.ARTIFACTORY_URL}}
+            repo=${{secrets.ARTIFACTORY_REPO}}
+            subpath=${{secrets.ARTIFACTORY_SSO_SUBPATH}}
+
