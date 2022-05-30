@@ -21,12 +21,15 @@ jobs:
       - uses: actions/checkout@v2
         name: checkout
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
       - name: Login to docker repository
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.ARTIFACTORY_USERNAME }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          registry: https://ssag.jfrog.io/artifactory
+          registry: https://ssag.jfrog.io
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -40,7 +43,7 @@ jobs:
           file: demo-app/.docker/Dockerfile.prod
           context: ./demo-app
           push: true
-          tags: ssag.jfrog.io/artifactory/${{ secrets.ARTIFACTORY_REPO }}/ssag:latest
+          tags: ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
       - name: set kube-config
         uses: azure/k8s-set-context@v2
