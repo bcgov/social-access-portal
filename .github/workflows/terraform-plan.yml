@@ -42,8 +42,8 @@ jobs:
         with:
           file: demo-app/.docker/Dockerfile.prod
           context: ./demo-app
-          push: true
-          tags: ssag.jfrog.io/ssag:latest
+          push: false
+          tags: ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
       - name: Create Kube Config
         run: |
