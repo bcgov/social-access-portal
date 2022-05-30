@@ -45,6 +45,9 @@ jobs:
           push: false
           tags: ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
+      - name: Push Image
+        run: docker push ssag.jfrog.io/ssag-terraform-be/ssag:latest
+
       - name: Create Kube Config
         run: |
           echo "${{secrets.KUBE_CONFIG}}" > ./terraform/kubeconfig
