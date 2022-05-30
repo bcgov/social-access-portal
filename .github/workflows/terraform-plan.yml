@@ -29,7 +29,7 @@ jobs:
         with:
           username: ${{ secrets.ARTIFACTORY_USERNAME }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          registry: https://ssag.jfrog.io/artifactory
+          registry: https://ssag.jfrog.io/artifactory/ssag-terraform-be/
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
