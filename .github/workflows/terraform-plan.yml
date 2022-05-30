@@ -41,7 +41,7 @@ jobs:
           push: true
           tags: freshworksstudio/ssag:latest
 
-      - name: Echo images 
+      - name: Echo images name
         run: docker images
 
       - name: Create Kube Config
