@@ -33,9 +33,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Echo commit GITHUB_SHA::6
-        run: echo "ssag.jfrog.io/ssag:${GITHUB_SHA} "
-
       - name: Build Docker Image - Demo App
         uses: docker/build-push-action@v3
         with:
