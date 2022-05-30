@@ -3,7 +3,8 @@ provider "keycloak" {
   client_id     = "admin-cli"
   # client_secret = var.client_secret
   username      = "admin"
-  password      = "admin"
+  password      = var.password
   url           = var.keycloak_url
-  base_path     = "/"
+  base_path     = ""
+  client_timeout = "300"
 }

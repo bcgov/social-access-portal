@@ -21,7 +21,7 @@ variable "dev_password" {
 
 variable "dev_keycloak_url" {
   description = "The URL of the Keycloak instance"
-  default     = "http://localhost:8080"
+  default     = "https://social-sector-access-gateway-dev.apps.silver.devops.gov.bc.ca"
 }
 
 # KEYCLOAK_TEST

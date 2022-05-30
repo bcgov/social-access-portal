@@ -20,8 +20,11 @@ resource "helm_release" "keycloak" {
     )
   ]
 
+  timeout = "1200"
+
   depends_on = [
     helm_release.postgresql,
-    kubernetes_network_policy.sdpr_network_policy_internal
+    kubernetes_network_policy.sdpr_network_policy_internal,
+    kubernetes_secret.artifactory_creds
   ]
 }
