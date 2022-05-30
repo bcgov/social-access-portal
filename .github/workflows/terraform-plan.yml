@@ -45,6 +45,9 @@ jobs:
           push: false
           tags: ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
+      - name: Echo images 
+        run: docker images
+
       - name: Push Image
         run: docker push ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
