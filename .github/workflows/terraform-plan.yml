@@ -27,8 +27,8 @@ jobs:
       - name: Login to docker repository
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.ARTIFACTORY_USERNAME }}
-          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          username: ${{ secrets.ARTIFACTORY_DOCKER_USERNAME }}
+          password: ${{ secrets.ARTIFACTORY_DOCKER_API_KEY }}
           registry: https://ssag.jfrog.io/artifactory/ssag-terraform-be/
 
       - name: Set up Docker Buildx
