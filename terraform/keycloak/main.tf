@@ -1,10 +1,10 @@
 module "keycloak_dev" {
   source = "./keycloak-dev"
 
-  client_id                      = var.dev_client_id
-  client_secret                  = var.dev_client_secret
-  keycloak_url                   = var.dev_keycloak_url
-  username                       = var.dev_username
-  password                       = var.dev_password
-  siteminder_signing_certificate = var.test_siteminder_signing_certificate
+  client_id                      = var.DEV_CLIENT_ID
+  client_secret                  = var.DEV_CLIENT_SECRET
+  keycloak_url                   = var.DEV_KEYCLOAK_URL
+  username                       = var.DEV_USERNAME
+  password                       = var.DEV_PASSWORD
+  siteminder_signing_certificate = var.TEST_SITEMINDER_SIGNING_CERTIFICATE
 }

@@ -1,87 +1,87 @@
 # KEYCLOAK_DEV
-variable "dev_client_id" {
+variable "DEV_CLIENT_ID" {
   description = "The client_id for the Keycloak client in Master Realm"
   default     = "terraform-cli"
 }
 
-variable "dev_client_secret" {
+variable "DEV_CLIENT_SECRET" {
   description = "The client_secret for the Keycloak client"
   default     = ""
 }
 
-variable "dev_username" {
+variable "DEV_USERNAME" {
   description = "The username of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "dev_password" {
+variable "DEV_PASSWORD" {
   description = "The password of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "dev_keycloak_url" {
+variable "DEV_KEYCLOAK_URL" {
   description = "The URL of the Keycloak instance"
   default     = "https://social-sector-access-gateway-dev.apps.silver.devops.gov.bc.ca"
 }
 
 # KEYCLOAK_TEST
-variable "test_client_id" {
+variable "TEST_CLIENT_ID" {
   description = "The client_id for the Keycloak client in Master Realm"
   default     = "terraform-cli"
 }
 
-variable "test_client_secret" {
+variable "TEST_CLIENT_SECRET" {
   description = "The client_secret for the Keycloak client"
   default     = ""
 }
 
-variable "test_username" {
+variable "TEST_USERNAME" {
   description = "The username of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "test_password" {
+variable "TEST_PASSWORD" {
   description = "The password of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "test_keycloak_url" {
+variable "TEST_KEYCLOAK_URL" {
   description = "The URL of the Keycloak instance"
   default     = "https://test.loginproxy.gov.bc.ca"
 }
 
 # KEYCLOAK_PROD
-variable "prod_client_id" {
+variable "PROD_CLIENT_ID" {
   description = "The client_id for the Keycloak client in Master Realm"
   default     = "terraform-cli"
 }
 
-variable "prod_client_secret" {
+variable "PROD_CLIENT_SECRET" {
   description = "The client_secret for the Keycloak client"
   default     = ""
 }
 
-variable "prod_username" {
+variable "PROD_USERNAME" {
   description = "The username of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "prod_password" {
+variable "PROD_PASSWORD" {
   description = "The password of the user used by the provider for authentication via the password grant"
   default     = ""
 }
 
-variable "prod_keycloak_url" {
+variable "PROD_KEYCLOAK_URL" {
   description = "The URL of the Keycloak instance"
   default     = "https://loginproxy.gov.bc.ca"
 }
 
-variable "test_siteminder_signing_certificate" {
+variable "TEST_SITEMINDER_SIGNING_CERTIFICATE" {
   type      = string
   sensitive = true
 }
 
-variable "prod_siteminder_signing_certificate" {
+variable "PROD_SITEMINDER_SIGNING_CERTIFICATE" {
   type      = string
   sensitive = true
 }
