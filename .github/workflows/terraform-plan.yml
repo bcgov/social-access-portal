@@ -45,6 +45,8 @@ jobs:
           push: false
           tags: ssag.jfrog.io/ssag-terraform-be/ssag:latest
 
+      - run: docker build -f demo-app/.docker/Dockerfile.prod -t ssag.jfrog.io/ssag-terraform-be/ssag:latest ./demo-app
+
       - name: Echo images 
         run: docker images
 
