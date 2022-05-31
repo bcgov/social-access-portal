@@ -77,11 +77,13 @@ variable "PROD_KEYCLOAK_URL" {
 }
 
 variable "TEST_SITEMINDER_SIGNING_CERTIFICATE" {
+  default = ""
   type      = string
   sensitive = true
 }
 
 variable "PROD_SITEMINDER_SIGNING_CERTIFICATE" {
+  default=""
   type      = string
   sensitive = true
 }
