@@ -1,9 +1,7 @@
 name: Runs terraform plan
 on:
   pull_request:
-  push:
     branches:
-      - "dev"
       - "main"
 
 jobs:

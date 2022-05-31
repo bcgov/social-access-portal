@@ -1,11 +1,11 @@
-name: Runs KeyCloak terraform plan
+name: Apply terraform plan
 on:
-  pull_request:
+  push:
     branches:
-      - "main"
+      - main
 
 jobs:
-  terraform-plan:
+  terraform-apply:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -14,18 +14,16 @@ jobs:
       TF_VAR_DEV_KEYCLOAK_URL: ${{ secrets.TF_VAR_DEV_KEYCLOAK_URL }}
       TF_VAR_DEV_USERNAME: ${{ secrets.TF_VAR_DEV_USERNAME }}
       TF_VAR_DEV_PASSWORD: ${{ secrets.TF_VAR_DEV_PASSWORD }}
-
     steps:
       - uses: actions/checkout@v2
         name: checkout
-      - name: terraform plan
-        uses: dflook/terraform-plan@v1
+      - name: terraform apply
+        uses: dflook/terraform-apply@v1
         with:
-          path: terraform/keycloak
+          path: terraform
           backend_config: |
             username=${{ secrets.ARTIFACTORY_USERNAME }}
             password=${{ secrets.ARTIFACTORY_PASSWORD }}
             url=${{ secrets.ARTIFACTORY_URL }}
             repo=${{ secrets.ARTIFACTORY_REPO }}
             subpath=${{ secrets.ARTIFACTORY_KEYCLOAK_SUBPATH }}
-
