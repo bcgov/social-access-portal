@@ -1,7 +1,6 @@
 name: Runs KeyCloak terraform plan
 on:
   pull_request:
-  push:
     branches:
       - "dev"
       - "main"
@@ -12,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TF_VAR_DEV_CLIENT_ID: ${{ secrets.TF_VAR_DEV_CLIENT_ID }}
+      TF_VAR_DEV_CLIENT_SECRET: ${{ secrets.TF_VAR_DEV_CLIENT_SECRET }}
+      TF_VAR_DEV_KEYCLOAK_URL: ${{ secrets.TF_VAR_DEV_KEYCLOAK_URL }}
+      TF_VAR_DEV_USERNAME: ${{ secrets.TF_VAR_DEV_USERNAME }}
+      TF_VAR_DEV_PASSWORD: ${{ secrets.TF_VAR_DEV_PASSWORD }}
+
     steps:
       - uses: actions/checkout@v2
         name: checkout
