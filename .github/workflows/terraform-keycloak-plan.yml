@@ -29,5 +29,5 @@ jobs:
             password=${{secrets.ARTIFACTORY_PASSWORD}}
             url=https://ssag.jfrog.io/artifactory
             repo=ssag-terraform-be
-            subpath=ssag-infrastructure-dev
+            subpath=ssag-keycloak-dev
 
