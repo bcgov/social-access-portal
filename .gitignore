@@ -71,4 +71,7 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 .idea/
+<<<<<<< HEAD
 
+=======
+>>>>>>> e190325 (BCSCP-4 Added initial keycloak theme + extensions)
