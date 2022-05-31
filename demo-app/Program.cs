@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.CookiePolicy;
 var keycloakAuthority = Environment.GetEnvironmentVariable("KEYCLOAK_AUTHORITY");
 var keycloakClientId = Environment.GetEnvironmentVariable("KEYCLOAK_CLIENT_ID");
 var keycloakClientSecret = Environment.GetEnvironmentVariable("KEYCLOAK_CLIENT_SECRET");
+var keycloakRedirectUri = Environment.GetEnvironmentVariable("KEYCLOAK_REDIRECT_URI");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +46,12 @@ builder.Services.AddAuthentication(options =>
         options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
         options.NonceCookie.SameSite = SameSiteMode.Unspecified;
         options.CorrelationCookie.SameSite = SameSiteMode.Unspecified;
+
+        options.Events.OnRedirectToIdentityProvider = async n =>
+            {
+                n.ProtocolMessage.RedirectUri = keycloakRedirectUri + "/signin-oidc";
+                await Task.FromResult(0);
+            };
     }); 
 
 
