@@ -5,7 +5,6 @@ on:
     branches:
       - "dev"
       - "main"
-      - "BCSCP-4_Local-keycloak"
 
 jobs:
   terraform-plan:
