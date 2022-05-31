@@ -25,9 +25,9 @@ jobs:
         with:
           path: terraform/keycloak
           backend_config: |
-            username=gh_action
-            password=${{secrets.ARTIFACTORY_PASSWORD}}
-            url=https://ssag.jfrog.io/artifactory
-            repo=ssag-terraform-be
-            subpath=ssag-keycloak-dev
+            username=${{ secrets.ARTIFACTORY_USERNAME }}
+            password=${{ secrets.ARTIFACTORY_PASSWORD }}
+            url=${{ secrets.ARTIFACTORY_URL }}
+            repo=${{ secrets.ARTIFACTORY_REPO }}
+            subpath=${{ secrets.ARTIFACTORY_KEYCLOAK_SUBPATH }}
 
