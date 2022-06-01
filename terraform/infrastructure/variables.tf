@@ -37,7 +37,7 @@ variable "KEYCLOAK_ADMIN_PASSWORD" {
 
 variable "IMAGE_TAG" {
   type    = string
-  default = "18.0.0"
+  default = "latest"
 }
 
 # Kubernetes variables
@@ -53,4 +53,17 @@ variable "HOST_DOMAIN" {
 
 variable "SUB_DOMAIN" {
   type = string
+}
+
+variable "KEYCLOAK_REGISTRY_USERNAME" {
+  type = string
+}
+
+variable "KEYCLOAK_REGISTRY_API_KEY" {
+  type = string
+}
+
+variable "KEYCLOAK_REGISTRY_URL" {
+  type = string
+  default = "ssag.jfrog.io"
 }

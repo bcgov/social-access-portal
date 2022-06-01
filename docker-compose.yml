@@ -14,8 +14,13 @@ services:
         POSTGRES_USER: keycloak
         POSTGRES_PASSWORD: password
   keycloak:
-      image: quay.io/keycloak/keycloak:18.0.0
-      command: ["start-dev"]
+      build:
+        context: ./keycloak/
+        dockerfile: Dockerfile
+      command: ["start-dev --spi-theme-static-max-age=-1 --spi-theme-cache-themes=false --spi-theme-cache-templates=false"]
+      volumes:
+        - ./keycloak/extensions/themes/src/main/resources/theme/bcgov:/opt/keycloak/themes/bcgov
+        - ./keycloak/extensions/themes/src/main/resources/theme/bcgov-idp-stopper:/opt/keycloak/themes/bcgov-idp-stopper
       environment:
         DB_VENDOR: POSTGRES
         DB_ADDR: postgres
@@ -25,7 +30,6 @@ services:
         DB_PASSWORD: password
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
-        KC_FEATURES: admin2
       ports:
         - 8080:8080
       depends_on:
@@ -75,4 +79,9 @@ services:
         - /app/bin
         - /app/obj
     
-
+  dummy:
+      build:
+        context: .
+        dockerfile: Dockerfile.dummy
+      ports:
+      - "3000:3000"
