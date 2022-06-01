@@ -18,7 +18,7 @@ jobs:
       TF_VAR_DOCKER_USERNAME: ${{ secrets.TF_VAR_DOCKER_USERNAME }}
       TF_VAR_DOCKER_PASSWORD: ${{ secrets.TF_VAR_DOCKER_PASSWORD }}
       TF_VAR_DOCKER_EMAIL: ${{ secrets.TF_VAR_DOCKER_EMAIL }}
-      TF_VAR_DOCKER_IMAGE: ${{ secrets.TF_VAR_DOCKER_IMAGE }}
+      TF_VAR_DOCKER_IMAGE: "${{ secrets.TF_VAR_DOCKER_IMAGE }}:${{ github.event.inputs.version }}"
       TF_VAR_KEYCLOAK_AUTHORITY: ${{ secrets.TF_VAR_KEYCLOAK_AUTHORITY }}
       TF_VAR_APP_1_KEYCLOAK_CLIENT_ID: ${{ secrets.TF_VAR_APP_1_KEYCLOAK_CLIENT_ID  }}
       TF_VAR_APP_1_KEYCLOAK_CLIENT_SECRET: ${{  secrets.TF_VAR_APP_1_KEYCLOAK_CLIENT_SECRET }}
@@ -47,7 +47,7 @@ jobs:
           file: demo-app/.docker/Dockerfile.prod
           context: ./demo-app
           push: true
-          tags: "${{ secrets.TF_VAR_DOCKER_IMAGE }}:latest"
+          tags: "${{ secrets.TF_VAR_DOCKER_IMAGE }}:${{ github.event.inputs.version }}"
 
       - name: Create Kube Config
         run: |
@@ -69,7 +69,7 @@ jobs:
             url=${{secrets.ARTIFACTORY_URL}}
             repo=${{secrets.ARTIFACTORY_REPO}}
             subpath=${{secrets.ARTIFACTORY_DEMO_APP_SUBPATH}}
-            
+
       - name: terraform apply
         uses: dflook/terraform-apply@v1
         with:
