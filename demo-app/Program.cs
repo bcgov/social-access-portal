@@ -46,7 +46,6 @@ builder.Services.AddAuthentication(options =>
         options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
         options.NonceCookie.SameSite = SameSiteMode.Unspecified;
         options.CorrelationCookie.SameSite = SameSiteMode.Unspecified;
-
         options.Events.OnRedirectToIdentityProvider = async n =>
             {
                 n.ProtocolMessage.RedirectUri = keycloakRedirectUri + "/signin-oidc";

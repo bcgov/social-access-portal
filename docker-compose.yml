@@ -44,6 +44,7 @@ services:
         - APP_TITLE=${APP_TITLE_1}
         - APP_NAME=${APP_NAME_1}
         - APP_ID=1
+        - KEYCLOAK_REDIRECT_URI=${KEYCLOAK_REDIRECT_URI_1}
       restart: always
       ports:
         - 3000:7170
@@ -65,6 +66,7 @@ services:
         - APP_TITLE=${APP_TITLE_2}
         - APP_NAME=${APP_NAME_2}
         - APP_ID=2
+        - KEYCLOAK_REDIRECT_URI=${KEYCLOAK_REDIRECT_URI_2}
       restart: always
       ports:
         - 3001:7170
