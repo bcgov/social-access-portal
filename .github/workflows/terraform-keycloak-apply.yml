@@ -14,6 +14,10 @@ jobs:
       TF_VAR_DEV_KEYCLOAK_URL: ${{ secrets.TF_VAR_DEV_KEYCLOAK_URL }}
       TF_VAR_DEV_USERNAME: ${{ secrets.TF_VAR_DEV_USERNAME }}
       TF_VAR_DEV_PASSWORD: ${{ secrets.TF_VAR_DEV_PASSWORD }}
+      TF_VAR_KEYCLOAK_REGISTRY_USERNAME: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_USERNAME }}
+      TF_VAR_KEYCLOAK_REGISTRY_API_KEY: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_API_KEY }}
+      TF_VAR_KEYCLOAK_REGISTRY_URL: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_URL }}
+
     steps:
       - uses: actions/checkout@v2
         name: checkout

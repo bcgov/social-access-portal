@@ -24,7 +24,7 @@ module "demo-app-2-6-01-2477" {
   ]
   description                  = "Social Sector Access Portal App 1"
   override_authentication_flow = true
-  browser_authentication_flow  = data.keycloak_authentication_flow.demo_testing_5_16_3644_browserflow.id
+  browser_authentication_flow  = data.keycloak_authentication_flow.demo_app_2_6_01_2477_browserflow.id
   access_type                  = "CONFIDENTIAL"
   pkce_code_challenge_method   = ""
   web_origins = [
