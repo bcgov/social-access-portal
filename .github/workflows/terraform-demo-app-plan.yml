@@ -30,7 +30,7 @@ jobs:
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         with:
-          path: terraform/keycloak
+          path: terraform/demo-app
           backend_config: |
             username=${{ secrets.ARTIFACTORY_USERNAME }}
             password=${{ secrets.ARTIFACTORY_PASSWORD }}
