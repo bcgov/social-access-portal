@@ -1,9 +1,6 @@
 name: Build and deploy demo app
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       version:
@@ -58,17 +55,6 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
           context: ${{ secrets.KUBE_CONTEXT }}
-
-      - name: terraform destroy
-        uses: dflook/terraform-destroy@v1
-        with:
-          path: terraform/demo-app
-          backend_config: |
-            username=${{secrets.ARTIFACTORY_USERNAME}}
-            password=${{secrets.ARTIFACTORY_PASSWORD}}
-            url=${{secrets.ARTIFACTORY_URL}}
-            repo=${{secrets.ARTIFACTORY_REPO}}
-            subpath=${{secrets.ARTIFACTORY_DEMO_APP_SUBPATH}}
 
       - name: terraform apply
         uses: dflook/terraform-apply@v1
