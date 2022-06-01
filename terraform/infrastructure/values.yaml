@@ -6,6 +6,7 @@ command:
   - "--http-port=8080"
   - "--hostname-strict=false"
   - "--hostname-strict-https=false"
+  - "--log-level=DEBUG"
 extraEnv: |
   - name: KEYCLOAK_ADMIN
     value: ${KEYCLOAK_ADMIN_USERNAME}

@@ -28,7 +28,7 @@ variable "azureidir_keycloak_url" {
 }
 
 variable "bcsc_keycloak_url" {
-  default = "https://keycloak.freshworks.club/auth/realms/social-sector-portal-test/protocol/openid-connect"
+  default = "https://idtest.gov.bc.ca"
 }
 
 
