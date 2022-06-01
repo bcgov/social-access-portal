@@ -27,6 +27,11 @@ run-local:
 
 	@docker-compose up
 
+run-local-keycloak:
+	@echo "+\n++ Make: Starting keycloak ...\n+"
+
+	@docker-compose up keycloak
+
 close-local:
 	@echo "+\n++ Make: Stopping app ...\n+"
 	@docker-compose down
