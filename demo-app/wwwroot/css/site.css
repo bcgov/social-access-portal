@@ -1,0 +1,126 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+h1 {
+  font-size: 35px;
+  line-height: 48px;
+  margin: 0px;
+}
+
+.header {
+  position: fixed;
+  z-index: 150;
+  align-items: center;
+  background-color: #036;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  border-bottom: 2px solid #fcba19;
+  padding: 0 65px 0 10px;
+  color: #fff;
+  display: flex;
+  height: 70px;
+}
+
+.title-wrapper {
+  height: 45px;
+  width: 100%;
+}
+
+.top-title {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.bottom-title {
+  font-size: 27px;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.logo-wrapper {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #F3B229;
+  margin-right: 20px;
+}
+
+.logo {
+  height: 37px;
+  width: 200px;
+}
+
+.page {
+  padding-top: 70px;
+  min-height: calc(100vh - 70px);
+}
+
+.bc-footer {
+  background-color: #036;
+  height: 70px;
+  border-top: 2px solid #fcba19;
+  position: relative;
+}
+
+.bc-footer-elements {
+  display: absolute;
+  height: 70px;
+  width: 100%;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 12% 0;
+}
+
+.bc-footer-elements > .links {
+  font-size: 12px;
+}
+
+.bc-footer-elements > .divider {
+  color: #4B5E73;
+}
+
+.styled-button {
+	box-shadow: 0px 2px 5px -5px #3e7327;
+	background-color: #FCBA19;
+	border-radius:2px;
+	display:inline-block;
+	cursor:pointer;
+	color:#003366;
+	font-size: 13px;
+	font-weight:bold;
+	padding:8px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #FCBA79;
+  border: none;
+}
+.styled-button:hover {
+	background-color: #F5B111;
+}
+.styled-button:active {
+	position:relative;
+	top: 1px;
+}
+
+.page-content {
+  padding: 4% 15%;
+}
+
+.bottom-space {
+  margin-bottom: 25px;
+}

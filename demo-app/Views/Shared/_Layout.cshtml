@@ -1,0 +1,61 @@
+﻿@{
+    var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - dot_net</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dot_net.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo-wrapper">
+                <img class ="logo" src="~/images/logo-banner.svg" alt="BC Gov logo"/>
+            </div>
+            <div class="title-wrapper" >
+                <div class="bottom-title" >
+                    @appTitle
+                </div>
+            </div>  
+        </div>
+    </header>
+    <div class="page">
+        <div class="page-content">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <footer class="bc-footer">
+        <div class="bc-footer-elements">
+            <p class="links">Version 1.1.2</p>
+            <p class="divider">|</p>
+            <p class="links">Home</p>
+            <p class="divider">|</p>
+            <p class="links">Disclaimer</p>
+            <p class="divider">|</p>
+            <p class="links">Privacy</p>
+            <p class="divider">|</p>
+            <p class="links">Collection of Information</p>
+            <p class="divider">|</p>
+            <p class="links">Terms of Use</p>
+            <p class="divider">|</p>
+            <p class="links">Accesibility</p>
+            <p class="divider">|</p>
+            <p class="links">Copyright</p>
+            <p class="divider">|</p>
+            <p class="links">Contact Us</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿@{
+    var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
+    var Username = ViewBag.Name;
+}
+<h1>Welcome to @appTitle</h1>
+
+<p class="bottom-space">Logged in User: @Username</p>
+<p class="bottom-space">When does a dad become a dad joke? When it becomes <u>apparent</u> !</p>
+<a class="styled-button" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>

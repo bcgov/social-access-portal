@@ -34,6 +34,51 @@ services:
         - 8080:8080
       depends_on:
         - postgres
+
+  application_1:
+      image: bcscp-demo-app-1:dev
+      container_name: bcscp-demo-app-1
+      build:
+        context: ./demo-app
+        dockerfile: .docker/Dockerfile.dev
+      environment:
+        - KEYCLOAK_AUTHORITY=${KEYCLOAK_AUTHORITY}
+        - KEYCLOAK_CLIENT_ID=${KEYCLOAK_CLIENT_ID}
+        - KEYCLOAK_CLIENT_SECRET=${KEYCLOAK_CLIENT_SECRET}
+        - APP_TITLE=${APP_TITLE_1}
+        - APP_NAME=${APP_NAME_1}
+        - APP_ID=1
+        - KEYCLOAK_REDIRECT_URI=${KEYCLOAK_REDIRECT_URI_1}
+      restart: always
+      ports:
+        - 3000:7170
+      volumes:
+        - ./demo-app:/app
+        - /app/bin
+        - /app/obj
+  
+  application_2:
+      image: bcscp-demo-app-2:dev
+      container_name: bcscp-demo-app-2
+      build:
+        context: ./demo-app
+        dockerfile: .docker/Dockerfile.dev
+      environment:
+        - KEYCLOAK_AUTHORITY=${KEYCLOAK_AUTHORITY}
+        - KEYCLOAK_CLIENT_ID=${KEYCLOAK_CLIENT_ID}
+        - KEYCLOAK_CLIENT_SECRET=${KEYCLOAK_CLIENT_SECRET}
+        - APP_TITLE=${APP_TITLE_2}
+        - APP_NAME=${APP_NAME_2}
+        - APP_ID=2
+        - KEYCLOAK_REDIRECT_URI=${KEYCLOAK_REDIRECT_URI_2}
+      restart: always
+      ports:
+        - 3001:7170
+      volumes:
+        - ./demo-app:/app
+        - /app/bin
+        - /app/obj
+    
   dummy:
       build:
         context: .
