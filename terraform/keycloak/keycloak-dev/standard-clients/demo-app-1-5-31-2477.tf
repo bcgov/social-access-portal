@@ -1,11 +1,11 @@
-data "keycloak_authentication_flow" "demo_app_1_5_31_2477_browserflow" {
+data "keycloak_authentication_flow" "demo_app_2_6_01_2477_browserflow" {
   realm_id = var.standard_realm_id
   alias    = "idp stopper"
 }
-module "demo-app-1-5-31-2477" {
+module "demo-app-2-6-01-2477" {
   source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=6c24c89/modules/standard-client"
   realm_id    = var.standard_realm_id
-  client_name = "demo-app-1-5-31-2477"
+  client_name = "demo-app-2-6-01-2477"
   valid_redirect_uris = [
     "https://demo-app-1.apps.silver.devops.gov.bc.ca/*"
   ]
