@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "${{secrets.KUBE_CONFIG}}" > ./terraform/demo-app/kubeconfig
 
-      - name: terraform plan
+      - name: terraform demo-app plan
         uses: dflook/terraform-plan@v1
         with:
           path: terraform/demo-app
