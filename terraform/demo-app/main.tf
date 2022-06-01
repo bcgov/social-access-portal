@@ -2,7 +2,7 @@
 resource "kubernetes_secret" "docker-registry" {
   metadata {
     name      = "demo-app-image-pull-secret"
-    namespace = var.NAMESPACE
+    namespace = "${var.NAMESPACE}"
   }
 
   data = {
