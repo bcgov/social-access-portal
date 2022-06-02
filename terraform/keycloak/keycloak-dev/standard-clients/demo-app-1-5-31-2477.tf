@@ -9,6 +9,7 @@ module "demo-app-1-5-31-2477" {
   valid_redirect_uris = [
     "https://demo-app-1.apps.silver.devops.gov.bc.ca/*"
   ]
+  implicit_flow_enabled               = true
   access_token_lifespan               = ""
   client_session_idle_timeout         = ""
   client_session_max_lifespan         = ""
