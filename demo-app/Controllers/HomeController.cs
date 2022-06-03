@@ -25,7 +25,8 @@ public class HomeController : Controller
     {
         var user = HttpContext.User;
         if (user?.Identity.IsAuthenticated == true)
-        {
+        {   
+            ViewBag.Claims = user.Claims;
             ViewBag.Name = user.Identity.Name;
             return View("Private");
         }
