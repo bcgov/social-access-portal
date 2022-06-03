@@ -1,9 +1,16 @@
 ﻿@{
     var appTitle = Environment.GetEnvironmentVariable("APP_NAME");
     var Username = ViewBag.Name;
+    var Claims = ViewBag.Claims;
 }
 <h1>Welcome to @appTitle</h1>
 
 <p class="bottom-space">Logged in User: @Username</p>
-<p class="bottom-space">When does a dad become a dad joke? When it becomes <u>apparent</u> !</p>
+<div class="auth-details bottom-space">
+    @if(!Object.ReferenceEquals(null, Claims)){
+        @foreach(var claim in Claims){
+            <p class="auth-row">@claim</p>
+        }
+    }
+</div>
 <a class="styled-button" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>

@@ -84,4 +84,4 @@ services:
         context: .
         dockerfile: Dockerfile.dummy
       ports:
-      - "3000:3000"
+      - "3002:3000"

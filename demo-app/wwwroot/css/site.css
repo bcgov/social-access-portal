@@ -124,3 +124,14 @@ h1 {
 .bottom-space {
   margin-bottom: 25px;
 }
+
+.auth-details {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.auth-row {
+  margin: 1px;
+  padding: 0px;
+}
