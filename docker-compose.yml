@@ -21,6 +21,7 @@ services:
       volumes:
         - ./keycloak/extensions/themes/src/main/resources/theme/bcgov:/opt/keycloak/themes/bcgov
         - ./keycloak/extensions/themes/src/main/resources/theme/bcgov-idp-stopper:/opt/keycloak/themes/bcgov-idp-stopper
+        - ./keycloak/extensions/themes/src/main/resources/theme/ssag:/opt/keycloak/themes/ssag
       environment:
         DB_VENDOR: POSTGRES
         DB_ADDR: postgres
