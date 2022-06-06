@@ -88,13 +88,20 @@ body {
   z-index: 10;
   color: #fff;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 10px 20% 0;
+  padding: 10px 10% 0;
 }
 
 .ssag-footer-elements > .links {
   font-size: 12px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.ssag-footer-elements > .links:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .ssag-footer-elements > .divider {
