@@ -31,6 +31,16 @@ variable "bcsc_keycloak_url" {
   default = "https://idtest.gov.bc.ca"
 }
 
+variable "bcsc_client_id" {
+  sensitive = true
+  type = string
+}
+
+variable "bcsc_client_secret" {
+  sensitive = true
+  type = string
+}
+
 
 variable "siteminder_signing_certificate" {
   type      = string
