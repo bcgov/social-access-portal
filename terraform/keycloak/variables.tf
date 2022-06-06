@@ -24,6 +24,18 @@ variable "DEV_KEYCLOAK_URL" {
   default     = "https://social-sector-access-gateway-dev.apps.silver.devops.gov.bc.ca"
 }
 
+variable "DEV_BCSC_CLIENT_ID" {
+  description = "The BCSC client id used for dev"
+  sensitive = true
+  type = string
+}
+
+variable "DEV_BCSC_CLIENT_SECRET" {
+  description = "The BCSC client secret used for dev"
+  sensitive = true
+  type = string
+}
+
 # KEYCLOAK_TEST
 variable "TEST_CLIENT_ID" {
   description = "The client_id for the Keycloak client in Master Realm"
