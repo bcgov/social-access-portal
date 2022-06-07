@@ -18,6 +18,7 @@ jobs:
       TF_VAR_KEYCLOAK_REGISTRY_USERNAME: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_USERNAME }}
       TF_VAR_KEYCLOAK_REGISTRY_API_KEY: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_API_KEY }}
       TF_VAR_KEYCLOAK_REGISTRY_URL: ${{ secrets.TF_VAR_KEYCLOAK_REGISTRY_URL }}
+      TF_VAR_IMAGE_TAG: ${{ secrets.TF_VAR_IMAGE_TAG }}
     steps:
       - uses: actions/checkout@v2
         name: checkout
