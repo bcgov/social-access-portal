@@ -1,6 +1,8 @@
 <#import "template.ftl" as layout>
+
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
+    asdaweqw
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
     <div id="kc-form">
@@ -10,7 +12,7 @@
                     <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
                         <#list social.providers as p>
                             <#if login.username?contains("##" + p.alias + "##")>
-                                <li class="${properties.kcFormSocialAccountNameClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>${p.displayName}</span></a></li>
+                                <li class="${properties.kcFormSocialAccountNameClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="social-link"> <span>${p.displayName}</span></a></li>
                             </#if>
                         </#list>
                     </ul>
@@ -18,6 +20,7 @@
             </#if>
         </div>
     </div>
+
     <#elseif section = "info" >
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div id="kc-registration-container">
