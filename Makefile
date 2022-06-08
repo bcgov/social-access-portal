@@ -48,3 +48,13 @@ run-local-keycloak:
 close-local:
 	@echo "+\n++ Make: Stopping app ...\n+"
 	@docker-compose down
+
+build-keycloak:
+	cd keycloak && docker build -t ssag-keycloak:latest .
+
+push-keycloak:
+	docker login ssag.jfrog.io
+	docker tag ssag-keycloak:latest ssag.jfrog.io/ssag-keycloak/keycloak:latest
+	docker push ssag.jfrog.io/ssag-keycloak/keycloak:latest
+
+build-and-push-keycloak: build-keycloak push-keycloak

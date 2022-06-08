@@ -36,6 +36,32 @@ variable "DEV_BCSC_CLIENT_SECRET" {
   type = string
 }
 
+
+variable "DEV_BCSC_APP_1_CLIENT_ID" {
+  description = "The BCSC client id used for dev"
+  sensitive = true
+  type = string
+}
+
+variable "DEV_BCSC_APP_1_CLIENT_SECRET" {
+  description = "The BCSC client secret used for dev"
+  sensitive = true
+  type = string
+}
+
+variable "DEV_BCSC_APP_2_CLIENT_ID" {
+  description = "The BCSC client id used for dev"
+  sensitive = true
+  type = string
+}
+
+variable "DEV_BCSC_APP_2_CLIENT_SECRET" {
+  description = "The BCSC client secret used for dev"
+  sensitive = true
+  type = string
+}
+
+
 # KEYCLOAK_TEST
 variable "TEST_CLIENT_ID" {
   description = "The client_id for the Keycloak client in Master Realm"

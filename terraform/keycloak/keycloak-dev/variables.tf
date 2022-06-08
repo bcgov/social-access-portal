@@ -46,3 +46,23 @@ variable "siteminder_signing_certificate" {
   type      = string
   sensitive = true
 }
+
+variable "bcsc_app_1_client_id" {
+  sensitive = true
+  type = string
+}
+
+variable "bcsc_app_1_client_secret" {
+  sensitive = true
+  type = string
+}
+
+variable "bcsc_app_2_client_id" {
+  sensitive = true
+  type = string
+}
+
+variable "bcsc_app_2_client_secret" {
+  sensitive = true
+  type = string
+}
