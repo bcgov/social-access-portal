@@ -59,7 +59,7 @@ module "azureidir" {
 }
 
 module "bcsc" {
-  source                 = "github.com/bcgov/social-access-portal-terraform-modules?ref=5209238/modules/base-realms/realm-bcsc"
+  source                 = "../../../../social-access-portal-terraform-modules/modules/base-realms/realm-bcsc"
   keycloak_url           = var.keycloak_url
   realm_name             = local.bcsc_realm_name
   bcsc_idp_alias         = local.bcsc_idp_alias
@@ -120,6 +120,17 @@ module "bceidboth" {
 module "standard_clients" {
   source            = "./standard-clients"
   standard_realm_id = module.standard.realm_id
+  bcsc_realm_id     = module.bcsc.realm_id
+  standard_realm_name = local.standard_realm_name
+  bcsc_realm_name = local.bcsc_realm_name
+
+  
+  bcsc_app_1_client_id         = var.bcsc_app_1_client_id
+  bcsc_app_1_client_secret     = var.bcsc_app_1_client_secret
+  bcsc_app_2_client_id         = var.bcsc_app_2_client_id
+  bcsc_app_2_client_secret     = var.bcsc_app_2_client_secret
+  bcsc_keycloak_url            = var.bcsc_keycloak_url
+  idp_redirector_execution_id  = module.bcsc.idp_redirector_execution_id
 }
 
 module "master_idir_link" {
