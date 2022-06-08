@@ -1,12 +1,12 @@
 locals {
   standard_realm_name                   = "standard"
-  idir_realm_name                       = "idir"
+  idir_realm_name                       = "IDIR"
   azureidir_realm_name                  = "azureidir"
-  bceidbasic_realm_name                 = "bceidbasic"
-  bceidbusiness_realm_name              = "bceidbusiness"
-  bceidboth_realm_name                  = "bceidboth"
-  bcsc_realm_name                       = "bcsc1"
-  bcsc_idp_alias                        = "bcsc"
+  bceidbasic_realm_name                 = "BCeID (Basic)"
+  bceidbusiness_realm_name              = "BCeID (Business)"
+  bceidboth_realm_name                  = "BCeID (Basic + Business)"
+  bcsc_realm_name                       = "BCSC1"
+  bcsc_idp_alias                        = "BCSC"
   siteminder_single_sign_on_service_url = "https://sfstest7.gov.bc.ca/affwebservices/public/saml2sso"
 }
 
@@ -132,7 +132,7 @@ module "master_idir_link" {
 
 module "master_viewer_role" {
   source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=5209238/modules/master-viewer-role"
-  realm_names = ["master", "standard", "idir", "azureidir", "bceidbasic", "bceidbusiness", "bceidboth"]
+  realm_names = ["master", "standard", "IDIR", "azureidir", "BCeID (Basic)", "BCeID (Business)", "BCeID (Basic + Business)"]
 
   depends_on = [
     module.standard,

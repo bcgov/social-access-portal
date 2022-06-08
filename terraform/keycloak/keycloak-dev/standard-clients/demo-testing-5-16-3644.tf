@@ -15,12 +15,12 @@ module "demo-testing-5-16-3644" {
   client_offline_session_idle_timeout = ""
   client_offline_session_max_lifespan = ""
   idps = [
-    "idir",
-    "bceidbasic",
-    "bceidbusiness",
-    "bceidboth",
+    "IDIR",
+    "BCeID (Basic)",
+    "BCeID (Business)",
+    "BCeID (Basic + Business)",
     "common",
-    "bcsc1"
+    "BCSC1"
   ]
   description                  = "CSS App"
   override_authentication_flow = true

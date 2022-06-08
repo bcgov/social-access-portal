@@ -15,12 +15,12 @@ module "demo-app-2-6-01-2477" {
   client_offline_session_idle_timeout = ""
   client_offline_session_max_lifespan = ""
   idps = [
-    "idir",
-    "bceidbasic",
-    "bceidbusiness",
-    "bceidboth",
+    "IDIR",
+    "BCeID (Basic)",
+    "BCeID (Business)",
+    "BCeID (Basic + Business)",
     "common",
-    "bcsc1"
+    "BCSC1"
   ]
   description                  = "Social Sector Access Portal App 1"
   override_authentication_flow = true
