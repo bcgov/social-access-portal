@@ -10,3 +10,5 @@ variable "bcsc_app_1_client_secret" {}
 variable "bcsc_app_2_client_secret" {}
 
 variable "idp_redirector_execution_id" {}
+
+variable "keycloak_url" {}
