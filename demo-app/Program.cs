@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.CookiePolicy;
-using System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler;
 
 // Config variables
 var keycloakAuthority = Environment.GetEnvironmentVariable("KEYCLOAK_AUTHORITY");
