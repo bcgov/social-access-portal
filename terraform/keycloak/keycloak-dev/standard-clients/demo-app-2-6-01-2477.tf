@@ -3,7 +3,7 @@ data "keycloak_authentication_flow" "demo_app_2_6_01_2477_browserflow" {
   alias    = "idp stopper"
 }
 module "demo-app-2-6-01-2477" {
-  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=c1df705/modules/standard-client"
+  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=ba2ec64/modules/standard-client"
   realm_id    = var.standard_realm_id
   bcsc_realm_name  = var.bcsc_realm_name
   bcsc_realm_id  = var.bcsc_realm_id
