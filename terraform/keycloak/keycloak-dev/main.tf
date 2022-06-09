@@ -11,7 +11,7 @@ locals {
   idir_idp_display_name                 = "IDIR"
   azureidir_idp_display_name            = "Azure IDIR"
   bceidbasic_idp_display_name           = "BCeID (Basic)"
-  bceidbusiness_idp_display_name        = "BCeID (Business"
+  bceidbusiness_idp_display_name        = "BCeID (Business)"
   bceidboth_idp_display_name            = "BCeID (Basic + Business)"
   bcsc_idp_display_name                 = "BCSC"
 }
