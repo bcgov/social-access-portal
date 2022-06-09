@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.CookiePolicy;
+using System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler;
 
 // Config variables
 var keycloakAuthority = Environment.GetEnvironmentVariable("KEYCLOAK_AUTHORITY");
@@ -11,6 +12,9 @@ var keycloakClientSecret = Environment.GetEnvironmentVariable("KEYCLOAK_CLIENT_S
 var keycloakRedirectUri = Environment.GetEnvironmentVariable("KEYCLOAK_REDIRECT_URI");
 
 var builder = WebApplication.CreateBuilder(args);
+
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -40,7 +44,7 @@ builder.Services.AddAuthentication(options =>
         options.SaveTokens = true;
         // Client secret shared with Keycloak
         options.ClientSecret = keycloakClientSecret;
-        options.GetClaimsFromUserInfoEndpoint = true;
+        options.GetClaimsFromUserInfoEndpoint = false;
 
         // OpenID flow to use
         options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
