@@ -16,3 +16,7 @@ variable "keycloak_url" {}
 variable "bcsc_idp_display_name" {
   type = string
 }
+
+variable "terraform_module_ref" {
+  type = string
+}
