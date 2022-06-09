@@ -5,7 +5,7 @@ data "keycloak_authentication_flow" "demo_app_1_5_31_2477_browserflow" {
 
 
 module "demo-app-1-5-31-2477" {
-  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=ba2ec64/modules/standard-client"
+  source      = "github.com/bcgov/social-access-portal-terraform-modules?ref=70a5da3/modules/standard-client"
   realm_id    = var.standard_realm_id
   bcsc_realm_name  = var.bcsc_realm_name
   bcsc_realm_id  = var.bcsc_realm_id
@@ -16,6 +16,7 @@ module "demo-app-1-5-31-2477" {
   bcsc_idp_alias = "bcsc"
   bcsc_client_id = var.bcsc_app_1_client_id
   bcsc_client_secret = var.bcsc_app_1_client_secret
+  bcsc_idp_display_name = var.bcsc_idp_display_name
 
   idp_redirector_execution_id = var.idp_redirector_execution_id
 
