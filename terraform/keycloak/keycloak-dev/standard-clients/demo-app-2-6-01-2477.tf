@@ -14,7 +14,6 @@ module "demo-app-2-6-01-2477" {
   bcsc_idp_alias = "bcsc2"
   bcsc_client_id = var.bcsc_app_2_client_id
   bcsc_client_secret = var.bcsc_app_2_client_secret
-  bcsc_idp_display_name = var.bcsc_idp_display_name
 
   idp_redirector_execution_id = var.idp_redirector_execution_id
 
