@@ -54,6 +54,11 @@ builder.Services.AddAuthentication(options =>
                 n.ProtocolMessage.RedirectUri = keycloakRedirectUri + "/signin-oidc";
                 await Task.FromResult(0);
             };
+        options.Events.OnRedirectToIdentityProviderForSignOut = async n =>
+            {
+                await options.Events.OnRedirectToIdentityProvider(n);
+                n.ProtocolMessage.PostLogoutRedirectUri = keycloakRedirectUri + "/signout-callback-oidc";
+            };
     }); 
 
 
